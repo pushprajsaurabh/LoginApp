@@ -1,0 +1,49 @@
+<% @page_title = "UserAuth | Signup" -%>
+<body style="background-color: darkturquoise;">
+<p style="margin-left:30%;"> <%= flash[:notice]%>  </p>
+<div class= "Sign_Form" style = "margin-left:37%;">
+<br/>
+<br/>
+<br/>
+  <h1>&nbsp &nbsp Sign Up</h1>
+  <%= form_for(:user, :url => {:controller => 'signup', :action => 'newuser'}) do |f| %>
+    <p>          
+      Name:</br> <%= f.text_field :name%>
+    </p>
+
+    <p>          
+      Username:</br> <%= f.text_field :username%>
+    </p>
+
+    <p>      
+      Password:</br> <%= f.text_field :password%>
+    </p>
+
+    <p>
+      Email:</br> <%= f.text_field :email%>
+    </p>
+
+    <p>
+      Mobile Number:</br> <%= f.text_field :mobile_no%>
+    </p>
+
+    <p>
+      Location:</br> <%= f.text_field :location%>
+    </p>
+
+    <%= f.submit :Signup %>
+  <% end %>
+</div>
+<div class="Bottom_Pane" style = "margin-left:31%"> 
+  <% if @user.errors.any? %>
+	<ul class="Signup_Errors">
+		<% for message_error in @user.errors.full_messages %>
+			<li>* <%= message_error %></li>
+	  	<% end %>
+	</ul>
+  <% end %>
+  <br/>
+  <br/>
+  Want to try logging in again? -  <%=link_to 'Login Page',login_path %>
+</div>
+</body>

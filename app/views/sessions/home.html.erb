@@ -1,0 +1,17 @@
+<body style="background-color: antiquewhite;">
+<div style="text-align: right;"> <%= link_to 'LOGOUT',logout_path  %> </div>
+<h1 style="margin-left:30%;">Hey!! Welcome  <%= @current_user.name %> . <br/>
+</br>Congrats.You are an Authorized user. </h1>
+<br/>
+<br/>
+<h2 style = "margin-left: 37%;text-decoration: underline;"> Your User Details are :- </h2>
+<div style = "margin-left: 40%;">
+<p> Name : <%= @current_user.name %> </p>
+
+<p> Location : <%= @current_user.location %> </p>
+
+<p> Mobile Number : <%= @current_user.mobile_no %> </p>
+
+<p> E-Mail Id : <%= @current_user.email %> </p>
+</div>
+</body>

@@ -1,0 +1,17 @@
+<body style="background-color: black;">
+<div style="text-align: right;"> <%= link_to 'Login', login_path, {:style=>'color:white;'} %> </div>
+<h1 style="
+    color: white;
+    margin-left: 24%;
+"> List of all the Users registered on the App </h1>
+
+<div style="
+    color: white;
+    font-weight: 400;
+    margin-left: 33%;
+">
+<% @all_users.each do |i| %>
+	</br><%= i.name %>  <br/> Username - <%= i.username%>, Mobile Number: <%= i.mobile_no%> </br>
+<% end %>
+</div>
+</body>

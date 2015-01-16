@@ -1,0 +1,29 @@
+<% @page_title = "UserAuth | Login" -%>
+<body style="background-image: url(http://phonewallpaperz.com/wp-content/uploads/2014/11/background_images_for_websites_free_download.jpg);">
+
+<div class= "Sign_Form" style = "margin-left:35%;">
+	<p> &nbsp &nbsp &nbsp &nbsp <%= flash[:notice]%>  </p>
+	<h1>Welcome to the portal.</h1>
+	<div style = "margin-left:8%;">
+	</br>
+	<%= form_tag(:action => 'login') do %>
+		<p>
+		Username:</br> <%= text_field_tag(:username) %>
+		</p> 
+		
+		<p>
+		Password:</br> <%= password_field_tag :login_password %>
+		</p> 
+
+		&nbsp &nbsp &nbsp <%= submit_tag("Log In") %>
+	<% end %>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<p>Not a user yet? Please Signup : <%= link_to 'Sign me up', signup_path %> </p>
+</div>
+<div>
+<%= link_to 'List of Registered users', sessions_list_allusers_path%>
+</div>
+</body>
